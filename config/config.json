@@ -1,0 +1,8 @@
+{
+  "app_mode" : "2DObjDet",
+  "model_name" : "Yolo",
+
+  "supported_models" : ["Yolo"],
+  "supported_app_modes" : ["2DObjDet"]
+
+}

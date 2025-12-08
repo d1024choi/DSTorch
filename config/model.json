@@ -1,0 +1,8 @@
+{
+  "Yolo" : {
+            "num_classes": 10,
+            "img_size": 640,
+            "backbone": "resnet18",
+            "anchor_sizes": null
+          }
+}

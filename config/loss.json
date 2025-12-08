@@ -1,0 +1,9 @@
+{
+  "2DObjDetLoss": {
+    "lambda_coord": 5.0,
+    "lambda_noobj": 0.5,
+    "lambda_obj": 1.0,
+    "lambda_cls": 1.0,
+    "iou_threshold": 0.5
+  }
+}
