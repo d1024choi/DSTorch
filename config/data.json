@@ -1,0 +1,31 @@
+{
+
+  "nuscenes" : {
+    "dataset_dir": "/home/etri/DATASET/nuscenes/",
+    "version": "v1.0-trainval"
+  },
+
+
+
+  "2DObjDet" : {
+    "original_image" : {"h": 900, "w": 1600},
+    
+    "image" : {
+      "h": 640,
+      "w": 640,
+      "top_crop": 0,
+      "n_cam": 6
+    },
+    
+    "bool_apply_img_aug": false,
+    
+    "visibilities": ["", "1", "2", "3", "4"],
+    
+    "cameras": ["CAM_FRONT_LEFT", "CAM_FRONT", "CAM_FRONT_RIGHT", 
+                "CAM_BACK_LEFT", "CAM_BACK", "CAM_BACK_RIGHT"],
+    
+    "val_ratio": 0.1,
+    "num_classes": 10
+  }
+}
+
