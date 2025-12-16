@@ -25,10 +25,17 @@ def load_datasetloader(args, dtype, world_size, rank, mode='train'):
             dataset, loader, None
     '''
 
-
+    # Make sure your model name and app mode are defined in './config/config.json'
+    # If the name and mode defined in argumentparser.py don't match those in the json file, it stops working.
     cfg = read_config()
     SUPPORTED_MODELS = cfg['supported_models']
+    if args.model_name not in SUPPORTED_MODELS:
+        sys.exit(f'[Error] nuScenes has no loaders for {args.model_name}!')
+    if args.app_mode not in cfg['supported_app_modes']:
+        sys.exit(f'[Error] {args.app_mode} mode is not supported!')
 
+
+    # TODO : modify this part based on your implementation
     # Validate dataset and model
     if args.dataset_type == 'nuscenes':
         if args.model_name == 'Yolo':
@@ -37,12 +44,8 @@ def load_datasetloader(args, dtype, world_size, rank, mode='train'):
             sys.exit(f'[Error] {args.model_name} is not supported for {args.dataset_type}!')
     else:
         sys.exit(f'[Error] {args.dataset_type} is not supported!')
-    if args.model_name not in SUPPORTED_MODELS:
-        sys.exit(f'[Error] nuScenes has no loaders for {args.model_name}!')
-    if args.app_mode not in cfg['supported_app_modes']:
-        sys.exit(f'[Error] {args.app_mode} mode is not supported!')
-
     
+
     # Test mode
     collate_fn = COLLATE_FUNCTIONS[args.app_mode]
     if mode not in ['train', 'val', 'valid']:
