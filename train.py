@@ -141,7 +141,7 @@ def main(args):
 
 if __name__ == '__main__':
 
-    # load args, update, 240131
+    # load args
     import argumentparser as ap
     args = ap.args
 

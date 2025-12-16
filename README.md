@@ -6,7 +6,7 @@ This project is to build a lightweight, PyTorch-based neural network training pl
 It starts training by running
 
 ```
-python train.py --exp_id 0 --gpu_num 0
+python train.py --dataset_type "nuscenes" --exp_id 0 --gpu_num 0 --model_name "Yolo"
 ```
 
 The image below illustrates the overall architecture of this platform.
@@ -16,7 +16,7 @@ The image below illustrates the overall architecture of this platform.
 </div>
 
 
-When it starts training, it automatically reads parameters pre-defined in *argumentparser.py* and json files in **config**. The parameters can be used to define your NNs and other training and evaluation related settings. I recommend that *argumentparser.py* is used to control parameters that are often changed over multiple trainings such as **batch size**, **the number of epochs**, etc. Whereas, the json files are used to define parameters that don't change frequently over multiple trainings. This platform comprises three parts:
+Once it starts training, it automatically reads parameters pre-defined in *argumentparser.py* and json files in **config**. The parameters can be used to define your NNs and other training and evaluation related settings. I recommend that *argumentparser.py* is used to control parameters that are often changed over multiple trainings such as **batch size**, **the number of epochs**, etc. Whereas, the json files are used to define parameters that don't change frequently over multiple trainings. The trained model parameters as well as the paremeter settings are automatically stored in *./saved_models/nuscenes_Yolo_model0*. This platform comprises three parts:
 
 ## (1) Dataset Loader
 
